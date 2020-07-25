@@ -1,0 +1,3 @@
+Its a logicless templating language
+
+Keeps the view and the code seperated

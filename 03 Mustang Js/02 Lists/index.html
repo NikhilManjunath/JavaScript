@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mustache</title>
+  <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.js"></script>
+</head>
+<body>
+  <div id="box"></div><br>
+  <div id="box1"></div><br>
+  <div id="box2"></div>
+  <!-- Non-empty Lists -->
+  <script type="nikhil" id="hellotmpl">
+    {{#nikhil}}
+    <b>{{name}}</b><br>
+    {{/nikhil}}
+  </script>
+
+  <!-- Looping an array of strings -->
+  <script type="nikhil" id="loop">
+    {{#nikhil}}
+    {{.}}
+    {{/nikhil}}
+  </script>
+
+  <script>
+    var data = {"nikhil": [
+      {"name": "Larry"},
+      {"name": "Moe"},
+      {"name": "Curly"}
+    ]
+  };
+    var tmpl = document.getElementById("hellotmpl").innerHTML
+    var html = Mustache.to_html(tmpl, data);
+    var box = document.getElementById("box");
+    
+    box.innerHTML = html;
+
+    var data = {"nikhil": ["Larry", "Curly", "Moe", "David"]};
+    var tmpl = document.getElementById("loop").innerHTML
+    var html = Mustache.to_html(tmpl, data);
+    var box1 = document.getElementById("box1");
+    
+    box1.innerHTML = html;
+  </script>
+</body>
+</html>

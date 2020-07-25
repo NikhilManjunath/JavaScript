@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Form Checking</title>
+</head>
+<body>
+  <form>
+    <label>Email Address</label>
+    <input type="email" name="email" id="email_1" required value="me@me.com"><br><br>
+    <label>Confirm Email Address</label>
+    <input type="email" name="email" id="email_2" required onchange="return check()"><br><br>
+    <input type="submit" value="Confirm Emails!" onclick="return check()">
+  </form>
+  <form><br><br>
+    <label>First Name<input type="text" name="fname" id="fname" required></label><br><br>
+    <label>Last Name<input type="text" name="lname" id="lname" required></label><br><br>
+    <label for="yesNick">Nickname?:</label>
+    <input type="checkbox" id="yesNick" name="yesNick" value="yes" onchange="Nickname()"><br><br>
+    <div id="nick">
+      <label for="nickname">Nickname:</label>
+      <input type="text" name="nickname" id="nickname"><br><br>
+    </div>
+    <label><input type="submit" value="verify"></label>
+  </form>
+  <script>
+    function check() {
+      var email1 = document.getElementById("email_1");
+      var email2 = document.getElementById("email_2");
+      if(email1.value != email2.value) {
+        alert("The emails don't match! Please check");
+        return false;
+      }
+    }
+
+    function Nickname() {
+      if (document.getElementById("yesNick").checked) {
+        document.getElementById("nick").style.display = "inline";
+        document.getElementById("nickname").setAttribute('required', true);
+      }
+      else {
+        document.getElementById("nickname").removeAttribute('required');
+        document.getElementById("nick").style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>

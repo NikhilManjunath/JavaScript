@@ -1,0 +1,1 @@
+Functions are codes which you can reuse 

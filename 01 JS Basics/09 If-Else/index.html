@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS If-Else</title>
+</head>
+<body>
+  <p id="numbers"></p>
+  <p id="sum"></p>
+  <p id="average"></p>
+  <script>
+    var numbers = [80, 87, 94, 82, 62, 98, 81, 81, 74, 91];
+    document.getElementById("numbers").innerHTML = numbers;
+    var sum = 0;
+    var average = 0;
+    
+    for(let i = 0; i < numbers.length; i++){
+      sum += numbers[i];
+    }
+
+    if(numbers.length != 0) {
+      average = sum/numbers.length;
+    }
+    else {
+      average = 0;
+    }
+    
+
+    
+    document.getElementById("sum").innerHTML = "The sum of the numbers is " + sum;
+    document.getElementById("average").innerHTML = "The average of the numbers is " + average;
+    
+    
+    
+  </script>
+  <script>
+    var name = prompt("What is your name?");
+
+    if (name.length != 0) {
+      document.write("Hello " + name);
+    }
+    else {
+      document.write("Feeling Shy?")
+    }
+  </script>
+</body>
+</html>

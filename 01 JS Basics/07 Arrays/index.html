@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Arrays</title>
+</head>
+<body onload="loadFruits()">
+  <button onclick="myFunction()">Add Your Favorite</button>
+  <p id="fruits"></p>
+  <script>
+    var grades = [80, 89, 34, 24, 56]
+    console.log(grades.length);
+    console.log(grades[3]);
+    grades.push(35);
+    console.log(grades);
+
+    var fruits = ['Apple', 'Banana', 'Mango', 'Orange'];
+
+    function loadFruits() {
+      document.getElementById("fruits").innerHTML = fruits;
+    }
+
+    function myFunction() {
+      var fruit = prompt("What is your favorite fruit?");
+      // fruits[fruits.length] = fruit; -> does the same thing as push
+      fruits.push(fruit);
+      document.getElementById("fruits").innerHTML = fruits;
+    }
+  </script>
+</body>
+</html>

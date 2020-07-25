@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Events</title>
+  <style>
+    .open {
+      display: block;
+      background: #321456;
+    }
+
+    .close {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Date Function</h1>
+  <p id="demo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, repellendus.</p>
+  <button type="button" onclick="displayDate()">Display Date</button>
+
+  <!-- Button Event 1 -->
+  <h3>Modifying the DOM using Events</h3>
+  <button type="button" onclick="document.getElementById('change').innerHTML = 'Clicked First Button'";>First</button>
+  <button type="button" onclick="document.getElementById('change').innerHTML = 'Clicked Second Button'";>Second</button>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p id="change">Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+
+  <!-- Button Event 2 -->
+  <h3>Changing the style</h3>
+  <p>JavaScript can change the style of an HTML element</p>
+  <button type="button" onclick="OpenMe()">Open!</button>
+  <button type="button" onclick="CloseMe()">Close!</button>
+  <p id="vanish">You can open and close this paragraph using the buttons above</p>
+  <script>
+    function displayDate() {
+      document.getElementById("demo").innerHTML = Date();
+    }
+
+    function OpenMe() {
+      document.getElementById('vanish').className = "open";
+    }
+
+    function CloseMe() {
+      document.getElementById('vanish').className = "close";
+    }
+  </script>
+</body>
+</html>

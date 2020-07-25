@@ -1,0 +1,20 @@
+Page content is represented by the DOM. JS uses DOM to interact with the document
+DOM is accessed using API - Application Programming Interface
+API - a method for someone else to write code and you to interact with it
+
+
+DOM Elements:
+1. document: root of the page
+2. element - node in the tree
+3. nodeList - array of elements
+4. attributes - of an element
+
+Specific APIs:
+
+1. document.getElementById(id) -> gets the element(s) with that id
+2. document.getElementByClassName(class) -> gets the element(s) with that class
+
+3. element.innerHTML -> obtain the contents of an element (eg: text from a para)
+4. element.style -> style the elements
+5. element.setAttribute(attribute, value)
+5. element.removeAttribute(attribute) -> get rid of an attribute (eg: color)

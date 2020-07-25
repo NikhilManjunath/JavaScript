@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mustache JS</title>
+  <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      line-height: 1.7;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #444;
+    }
+
+    #container {
+      display: flex;
+      padding: 20px;
+      background: #222;
+      color: #fff;
+    }
+
+    #container .header-name {
+      flex-basis: 30%;
+      text-align: center;
+      border-right: #fff 1px solid;
+    }
+
+    #container .header-age {
+      flex-basis: 10%;
+      text-align: center;
+      border-right: #fff 1px solid;
+    }
+
+    #container .header-number {
+      flex-basis: 20%;
+      text-align: center;
+      border-right: #fff 1px solid;
+    }
+
+    #container .header-city {
+      flex-basis: 20%;
+      text-align: center;
+      border-right: #fff 1px solid;
+    }
+
+    #container .header-state {
+      flex-basis: 20%;
+      text-align: center;
+    }
+
+    /* Template Design */
+    .list-container {
+      display: flex;
+      padding: 20px;
+      background: #333;
+      border-bottom: 1px solid #d3d3d3;
+      color: #fff;
+    }
+
+    .list-container:hover {
+      background: #fff;
+      border: 1px solid red;
+      color: #000;
+    }
+
+    .list-container .list-name {
+      flex-basis: 30%;
+      text-align: center;
+      border-right: #fff 1px solid;
+    }
+
+    .list-container .list-age {
+      flex-basis: 10%;
+      text-align: center;
+      border-right: #fff 1px solid;
+    }
+
+    .list-container .list-number {
+      flex-basis: 20%;
+      text-align: center;
+      border-right: #fff 1px solid;
+    }
+
+    .list-container .list-city {
+      flex-basis: 20%;
+      text-align: center;
+      border-right: #fff 1px solid;
+    }
+
+    .list-container .list-state {
+      flex-basis: 20%;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <div id="container">
+      <div class="header header-name">
+        Name
+      </div>
+      <div class="header header-age">
+        Age
+      </div>
+      <div class="header header-number">
+        Phone Number
+      </div>
+      <div class="header header-city">
+        City
+      </div>
+      <div class="header header-state">
+        State
+      </div>
+    </div>
+    <div id="wrapper"></div>
+  </section>
+
+  <!-- Reuseable Template -->
+  <script type="text/html" id="templ">
+    {{#ListofPeople}}
+    <div class="list-container">
+      <div class="list-name">
+        {{name}}
+      </div>
+      <div class="list-age">
+        {{age}}
+      </div>
+      <div class="list-number">
+        {{number}}
+      </div>
+      <div class="list-city">
+        {{city}}
+      </div>
+      <div class="list-state">
+        {{state}}
+      </div>
+    </div>
+    {{/ListofPeople}}
+  </script>
+
+  <!-- JavaScript -->
+  <script>
+    $(document).ready(function(){
+      console.log('Document is ready')
+      
+      var data = {"ListofPeople": [
+        {"name": "Nikhil", "age": "22", "number": "123456", "city": "Bangalore", "state": "Karnataka"},
+        {"name": "Srujan", "age": "16", "number": "654321", "city": "Mysore", "state": "Karnataka"},
+        {"name": "Dave", "age": "35", "number": "15423", "city": "Georgia", "state": "Florida"},
+        {"name": "Jose", "age": "43", "number": "123456", "city": "Tijuana", "state": "Mexico"},
+        ]
+      };
+ 
+
+      var tmpl = document.getElementById("templ").innerHTML
+      var html = Mustache.to_html(tmpl, data);
+      var wrapper = document.getElementById("wrapper");
+      wrapper.innerHTML = html;
+
+
+    });
+  </script>
+</body>
+</html>

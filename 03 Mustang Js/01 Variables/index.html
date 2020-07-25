@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mustache</title>
+  <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.js"></script>
+</head>
+<body>
+  <div id="box"></div><br>
+  <div id="box1"></div><br>
+  <div id="box2"></div>
+  <script type="nikhil" id="hellotmpl">
+    <div id="name">
+      {{name}}
+    </div>
+    <div id="age">
+      {{age}}
+    </div>
+    <div id="company">
+      {{company}}
+    </div>
+    <div id="city">
+      {{city}}
+    </div>
+    <div id="state">
+      {{state}}
+    </div>
+  </script>
+
+  <script type="nikhil" id="dotnotation">
+    <div id="name">
+      {{name.first}} {{name.last}}
+    </div>
+    <div id="dob">
+      {{dob.date}} {{dob.month}} {{dob.year}}
+    </div>
+  </script>
+
+  <script>
+    var data = {name: "Nikhil", age: "22", company: "BMS", city: "Bangalore", state: "Karnataka"};
+    var tmpl = document.getElementById("hellotmpl").innerHTML
+    var html = Mustache.to_html(tmpl, data);
+    var box = document.getElementById("box");
+    
+    box.innerHTML = html;
+
+    var data = {name: "Srujan", age: "14", company: "SKCH", city: "Bangalore", state: "Karnataka"};
+    var tmpl = document.getElementById("hellotmpl").innerHTML
+    var html = Mustache.to_html(tmpl, data);
+    var box = document.getElementById("box1");
+    
+    box.innerHTML = html;
+
+    var data = {name: {"first": "Nikhil", "last": "Manjunath"}, dob: {"date": "02", "month": "April", "year": "1998"}};
+    var temp = document.getElementById("dotnotation").innerHTML;
+    var html = Mustache.to_html(temp, data);
+    var box2 = document.getElementById("box2");
+    box2.innerHTML = html;
+  </script>
+</body>
+</html>

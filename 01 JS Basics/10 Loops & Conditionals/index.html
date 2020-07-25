@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Loops and Conditionals</title>
+</head>
+<body>
+  <script>
+    var grades = [2, 5, , , 9, 8, , 8];
+    var sum = 0;
+    var count = 0;
+
+    if(grades.length > 0){
+      for(i = 0; i < grades.length; i++){
+        if(grades[i] != undefined){
+          sum += grades[i];
+          count = count + 1;
+        }  
+      }
+      document.write(sum/count);
+    }
+    else {
+      document.write("Empty Array");
+    }
+
+    // Nested Conditionals
+    var name = prompt("What is your name?")
+    if(name.length != 0){
+      if(name == "Nikhil"){
+        document.write("<br> What a cool name!");
+      }
+      else {
+        document.write("<br>Hello " + name);
+      }
+    }
+    else {
+      document.write("<br> Feeling Shy?")
+    }
+  </script>
+</body>
+</html>

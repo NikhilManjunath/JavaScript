@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS this</title>
+  <style>
+  img{
+    width:20%;
+  }
+
+  #image {
+    background: blueviolet;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  </style>
+</head>
+<body>
+  <!-- <img src="arsenal.jpg" alt="Arsenal Footbal Club" onclick="console.log(this.alt)"> -->
+  <div onclick="console.log(this.innerHTML)">This is about Arsenal FC</div>
+
+  <img src="ffnfn.jpg" alt="A family picture" onclick="DisplayId(this)" id="img2">
+  <div id="div2" onclick="DisplayId(this)">Hi</div>
+  <hr>
+
+  <script>
+    function DisplayId(element) {
+      console.log(element.id)
+    }
+  </script>
+</body>
+</html>

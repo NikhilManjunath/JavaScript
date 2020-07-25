@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mustache</title>
+  <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.js"></script>
+</head>
+<body>
+  <div id="box"></div><br>
+  <div id="box1"></div><br>
+  <div id="box2"></div>
+  <!-- Functions -->
+  <script type="arsenal" id="fnct">
+    {{#beatles}}
+    {{name}}<br>
+    {{/beatles}}
+  </script>
+
+  <script>
+    var data = {"beatles":[
+      {"firstname": "Paul", "lastname": "Mcartney"},
+      {"firstname": "John", "lastname": "Lennon"},
+      {"firstname": "George", "lastname": "Harrison"},
+      {"firstname": "Ringo", "lastname": "Starr"},
+    ],
+    "name": function(){
+      return this.firstname + " " + this.lastname
+    }
+  }
+
+  var tmpl = document.getElementById("fnct").innerHTML;
+  var html = Mustache.to_html(tmpl, data);
+  var box = document.getElementById("box");
+
+  box.innerHTML = html;
+  </script>
+</body>
+</html>
